@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 时代程序员的核心能力 · CorPath</title>
+  <meta name="description" content="AI 时代程序员最该提高的，是把模糊需求变成可验证的正确性标准，并建立证据闭环的能力。">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-inner">
+      <a class="brand" href="../index.html"><span class="dot">Cor</span><span class="dev">Path</span></a>
+      <nav class="site-nav">
+        <a href="../index.html">首页</a>
+        <a href="../life/index.html">人生之路</a>
+        <a href="index.html">开发之路</a>
+        <a href="../tags.html">标签</a>
+        <a href="../about.html">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap article">
+    <a class="back" href="index.html">← 返回开发之路</a>
+    <header>
+      <div class="cat">开发之路 · <a href="../tags.html?tag=%E6%80%9D%E8%80%83%E6%84%9F%E6%82%9F">思考感悟</a></div>
+      <h1>AI 时代程序员的核心能力</h1>
+      <time class="date">2026-11-17</time>
+    </header>
+
+    <div class="body">
+      <p>AI 时代，随着 AI 开发代码的能力越来越强，AI 设计功能开发方案的能力越来越强，那么程序员最应该提高的能力是什么？</p>
+
+      <p>我的答案很具体：程序员最该提高的是 <strong>"把模糊需求变成可验证的正确性标准，并建立证据闭环"</strong> 的能力。</p>
+
+      <p>换句话说，不是只会问"这个功能怎么写"，而是能够先说清楚：</p>
+
+      <ul>
+        <li>它上线后，什么情况下算真对了？</li>
+        <li>哪些东西绝对不能坏？</li>
+        <li>数据量、并发量、响应时间大概到什么程度？</li>
+        <li>超时、重试、部分失败、权限异常时会怎样？</li>
+        <li>用什么实际运行结果证明它真的对，而不是看起来对？</li>
+      </ul>
+
+      <p>这比"对系统持续负责"具体，因为每一步都能落到可验收的结果上。</p>
+
+      <p>AI 最擅长的，是根据一个描述生成一个"合理"的方案。问题在于，模糊需求里那些没有被说出来的条件，AI 会替你悄悄补上。它经常不是语法写错，而是 <strong>很漂亮地实现了错误的问题</strong>。</p>
+
+      <h2>一个具体例子</h2>
+
+      <p>产品说："订单页加一个导出 Excel 按钮。"</p>
+
+      <p>不会编程但会用 AI 的人，可能会做出一个按钮，点击后下载文件，看起来完成。</p>
+
+      <p>只会接明确需求的程序员，可能把字段查出来、生成文件、加一个接口，测试两三行数据，也完成。</p>
+
+      <p>真正有竞争力的程序员会先追问或自己判断：</p>
+
+      <ul>
+        <li>一万行、一百万行数据时，是同步下载还是异步生成？</li>
+        <li>用户连续点两次，或者网关自动重试，会不会生成两份任务？</li>
+        <li>销售能不能导出别的租户的订单？手机号、地址要不要脱敏？</li>
+        <li>导出到一半数据库超时，应该返回空文件、半成品，还是显示可重试的失败？</li>
+        <li>导出任务重启后，应该从头开始还是断点继续？</li>
+        <li>什么结果能作为验收证据：指定数据量下的耗时、内存上限、越权测试、重复请求测试、失败恢复测试？</li>
+      </ul>
+
+      <p>前两种人证明的是"我把东西做出来了"。第三种人证明的是"这个东西在真实条件下可用"。</p>
+
+      <p>这就是差别。</p>
+
+      <h2>它的底层不只是"会测试"</h2>
+
+      <p>测试只是其中一部分。更底层的是三个东西：</p>
+
+      <p>第一，<strong>知道什么叫做对。</strong> 很多需求真正难的不是实现，而是根本没人认真定义成功。能补出那些缺失条件，并把它们写成可检查的验收标准，本身就是价值。</p>
+
+      <p>第二，<strong>知道计算机在什么情况下会坏。</strong> 你不需要什么都精通，但至少要在两三个方向上具备真正的深度，比如数据与事务、并发与幂等、网络与安全、性能和资源、部署与故障恢复。AI 可以生成代码，但它不会替你承担一个错误事务、一次越权或一次重复扣款造成的后果。</p>
+
+      <p>第三，<strong>能在冲突目标之间做取舍。</strong> 更快、更便宜、更安全、更简单，经常不能同时满足。真正的工程判断不是把所有选项都列出来，而是能说："这里选择牺牲一点开发速度，因为失败代价太高；那里接受最终一致，因为业务允许延迟十秒。"</p>
+
+      <h2>为什么这能区分三类人</h2>
+
+      <table>
+        <thead>
+          <tr><th>人</th><th>主要证明什么</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>会使用 AI 的非程序员</td><td>能把想法快速做成演示</td></tr>
+          <tr><td>只会把明确需求翻译成代码的人</td><td>能完成正常流程</td></tr>
+          <tr><td>真正有竞争力的程序员</td><td>能定义正确性，处理失败条件，并用证据证明交付可信</td></tr>
+        </tbody>
+      </table>
+
+      <p>第三种人未必写代码最快，因为代码生成已经越来越便宜。他真正的优势是：<strong>别人把一周变成更多代码，他把一周变成更多"已经验证可信的变化"。</strong></p>
+
+      <p>所以站在时代前边，不是比谁提示词写得更花，也不是单纯"会用 AI 审代码"，而是把 AI 变成一个 <strong>可验证、可审计、可控制风险的生产系统</strong>。AI 负责扩大产出，你负责定义边界、选择方向、制造证据和处理它无法承担的后果。</p>
+    </div>
+
+    <div class="article-foot">
+      属于 <a href="index.html">开发之路</a> · 下一篇 Coming soon
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <span class="brand-mini"><span class="life">Cor</span><span class="dev">Path</span></span> · 人生之路与开发之路的交汇 · &copy; 2026
+  </footer>
+</body>
+</html>

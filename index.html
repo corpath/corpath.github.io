@@ -1,5 +1,64 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"><title>My Blog</title></head>
-<body><h1>Hello, corpath.github.io!</h1></body>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CorPath · 人生之路与开发之路</title>
+  <meta name="description" content="CorPath —— 记录人生之路的思考感悟，与开发之路的技术笔记。">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-inner">
+      <a class="brand" href="index.html"><span class="dot">Cor</span><span class="dev">Path</span></a>
+      <nav class="site-nav">
+        <a href="index.html">首页</a>
+        <a href="life/index.html">人生之路</a>
+        <a href="dev/index.html">开发之路</a>
+        <a href="tags.html">标签</a>
+        <a href="about.html">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1><span class="core">Cor</span><span class="path">Path</span></h1>
+      <p class="sub">Core Path · 核心之路</p>
+      <p class="tagline">一条向内，是经历、思考与感悟；一条向外，是技术、代码与创造。看似两条路，实则你中有我、我中有你——人生里有开发，开发里也有人生。如同阴阳双鱼盘旋交错，殊途同归，本就是同一条路。</p>
+      <div class="taiji">
+        <img src="assets/taiji.svg" alt="阴阳双鱼盘旋交错，你中有我、我中有你，殊途同归" width="176" height="176">
+      </div>
+    </section>
+
+    <div class="wrap">
+      <section class="fork">
+        <!-- 人生之路 -->
+        <article class="path-card card-life">
+          <span class="label">Path One</span>
+          <h2>人生之路</h2>
+          <p class="desc">人生当中经历的事、事后的思考与感悟，以及实践之后的总结。把活着这件事，慢慢想明白一点。</p>
+          <ul id="homeLifeList"></ul>
+          <a class="enter" href="life/index.html">走进人生之路 →</a>
+        </article>
+
+        <!-- 开发之路 -->
+        <article class="path-card card-dev">
+          <span class="label">Path Two</span>
+          <h2>开发之路</h2>
+          <p class="desc">关于技术、代码与工程实现的思考，以及学习与开发笔记。把复杂的事情，拆成可验证的证据。</p>
+          <ul id="homeDevList"></ul>
+          <a class="enter" href="dev/index.html">走进开发之路 →</a>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <span class="brand-mini"><span class="life">Cor</span><span class="dev">Path</span></span> · 人生之路与开发之路的交汇 · &copy; 2026
+  </footer>
+
+  <script src="assets/posts.js"></script>
+  <script src="assets/dir.js"></script>
+</body>
 </html>
