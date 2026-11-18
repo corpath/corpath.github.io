@@ -159,7 +159,7 @@ a.folder-tag:hover { filter: brightness(.96); text-decoration: none; }
 .tag-mini:hover { filter: brightness(.96); }
 
 /* ---------- 文章页 ---------- */
-.article { padding: 48px 0 80px; }
+.article { padding-top: 48px; padding-bottom: 80px; }
 .article .back { font-size: 13px; color: var(--muted); transition: color .18s ease; }
 .article .back:hover { color: var(--dev); }
 .article header { margin: 24px 0 40px; }
@@ -184,7 +184,7 @@ a.folder-tag:hover { filter: brightness(.96); text-decoration: none; }
 .article-foot a { color: var(--dev); }
 
 /* ---------- 关于页 ---------- */
-.about { padding: 56px 0 80px; }
+.about { padding-top: 56px; padding-bottom: 80px; }
 .about h1 { font-size: 34px; }
 .about .lead { font-size: 17px; color: var(--ink); }
 .about p { color: #3d4149; }
