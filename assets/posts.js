@@ -27,7 +27,16 @@
         kicker: "Path One · Life",
         desc: COMMON_DESC + " 在人生之路这一侧，我把活着这件事，慢慢想明白一点。",
         theme: "life",
-        children: []
+        children: [
+          {
+            kind: "post",
+            date: "2026-03-22",
+            title: "鱼生",
+            file: "2026-03-22-鱼生.html",
+            excerpt: "每个人都是一条鱼，芸芸众鱼，大鱼吃小鱼，小鱼吃虾米，皆是如此，都是一路血腥而来。",
+            tags: ["人生观"]
+          }
+        ]
       },
       {
         key: "dev",
