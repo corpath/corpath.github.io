@@ -61,24 +61,6 @@
             file: "2026-11-17-ai时代程序员的核心能力.html",
             excerpt: "当 AI 写代码的能力越来越强，程序员最该提高的，是把模糊需求变成可验证的正确性标准，并建立证据闭环的能力。",
             tags: ["思考感悟"]
-          },
-          {
-            kind: "folder",
-            key: "demo",
-            title: "示例子目录",
-            kicker: "Demo · 子目录",
-            desc: "用于演示「文章与子文件夹同级展示」的示例目录，可随时删除。",
-            theme: "dev",
-            children: [
-              {
-                kind: "post",
-                date: "2026-11-16",
-                title: "示例：子目录里的一篇文章",
-                file: "2026-11-16-示例子目录里的文章.html",
-                excerpt: "这篇示例文章用于演示标签如何跨目录聚合，删除示例目录时一并删除即可。",
-                tags: ["思考感悟"]
-              }
-            ]
           }
         ]
       }
@@ -116,7 +98,7 @@
   }
   window.CORPATH_POSTS = flatten();
 
-  // 按目录路径（如 "dev" 或 "dev/demo"）查找文件夹节点
+  // 按目录路径（如 "dev" 或多级路径 "dev/subfolder"）查找文件夹节点
   window.CORPATH_FIND_FOLDER = function (dir) {
     if (!dir) return null;
     var parts = dir.split("/").filter(Boolean);
